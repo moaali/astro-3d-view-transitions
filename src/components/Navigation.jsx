@@ -59,7 +59,7 @@ export const Navigation = () => {
 
   return (
     <nav
-      className="top-0 rounded-3xl border-zinc-800 border-4 p-8 flex gap-5 justify-center mx-auto my-8 w-fit bg-white text-zinc-800 font-semibold"
+      className="relative top-0 rounded-3xl border-zinc-800 border-4 p-8 flex gap-5 justify-center mx-auto my-8 w-fit bg-white text-zinc-800 font-semibold"
       onClick={handleNavigation}
     >
       <a href="/" className={getClassName('dashboard')}>
@@ -71,6 +71,17 @@ export const Navigation = () => {
       <a href="/profile" className={getClassName('profile')}>
         Profile
       </a>
+      <i
+        className="block absolute w-4 h-1 left-0 rounded-full bg-red-500 bottom-1 transition-all duration-700"
+        style={{
+          left:
+            current === "dashboard"
+              ? "70px"
+              : current === "journal"
+              ? "160px"
+              : "230px",
+        }}
+      />
     </nav>
   )
 }
